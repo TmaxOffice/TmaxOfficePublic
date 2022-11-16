@@ -7,9 +7,15 @@ import { DialogId, DialogInfo } from 'store/ui/dialog/DialogTypes';
 
 const DialogWrapperComponent = (): JSX.Element => {
  
-
+    const { documentStore } = useStore();
+    const dialogContainer = documentStore.getUIContainer().getDialogContainer();
+    const dialogComponentMap = dialogContainer.getDialogComponentMap();
+    const showingDialogInfoList = dialogContainer.getShowingDialogInfoList();
   
-
+    const setSelectedDialog = (dialogInfo: DialogInfo) => {
+      dialogContainer.setSelectedDialog(dialogInfo);
+    };
+    
   return <></>;
 };
 

@@ -15,6 +15,11 @@ interface ZoomSliderCustomEventType extends WidgetEvents {
   onZoomRatioClick: () => void;
 }
 
+/**
+ * Bottom Status Bar에 위치하여 문서의 Zoom Level 을 조절하는 control 입니다.
+ *
+ * @todo -, + 버튼 icon 으로 대체 필요
+ */
 const ZoomSliderComponent = ({
   attr,
   eventhandler,

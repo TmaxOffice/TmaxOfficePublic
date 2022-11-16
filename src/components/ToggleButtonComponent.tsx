@@ -35,7 +35,25 @@ const ToggleButtonComponent = ({
           [`pk-office-w-toggle-icon--${attr?.size}`]: attr?.size,
         })}
       >
+        <IconComponent
+          attr={{
+            img: attr?.img,
+            width: iconSize,
+            height: iconSize,
+          }}
+        />
       </div>
+
+      {attr?.size !== 'small' && attr?.label && (
+        <div
+          className={classNames({
+            'pk-office-w-toggle-text': true,
+            [`pk-office-w-toggle-text--${attr?.size}`]: attr?.size,
+          })}
+        >
+          <LabelComponent attr={{ label: attr?.label }} />
+        </div>
+      )}
     </div>
   );
 };

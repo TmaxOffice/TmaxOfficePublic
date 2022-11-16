@@ -7,6 +7,7 @@ import StatusBarToggleBtnComponent from 'components/widgets/button/StatusBarTogg
 
 import 'style/StatusBar.scss';
 import useZoomSlider from 'hooks/control/useZoomSlider';
+import ZoomSliderComponent from 'components/statusbar/ZoomSliderComponent';
 import useResizeStatusBar from 'hooks/statusbar/useResizeStatusBar';
 import LabelComponent from 'components/widgets/LabelComponent';
 
@@ -111,6 +112,19 @@ const StatusBarComponent: React.FC<StatusBarProps> = ({
               />
             );
           })}
+          <ZoomSliderComponent
+            attr={{
+              zoomValue,
+              percentage,
+              sliderRef,
+            }}
+            eventhandler={{
+              onZoomRatioClick: handleZoomRatioClick,
+              onZoomIn: handleZoomIn,
+              onZoomOut: handleZoomOut,
+              onMouseDown: handleMouseDown,
+            }}
+          />
         </div>
       </div>
     </div>

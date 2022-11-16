@@ -28,4 +28,4 @@ function ArrowBtnComponent({
   );
 }
 
-export default ArrowBtnComponent;
+export default React.memo(ArrowBtnComponent);

@@ -2,7 +2,7 @@
 티맥스 office의 오픈 소스 저장소 입니다
 
 # Features
-- <b>[src/components]</b> Ribbon, Dialog에 사용될 Dropdown control을 위한 Component 
+- <b>[src/components]</b> Ribbon, Dialog, Dropdown, StatusBar, ZoomSlider, Button Component들  
 - <b>[src/node]</b> 문서 컨텐츠 영역에 나타낼 개체들의 base class
 - <b>[src/util]</b> 값 변환을 위한 유틸 함수들 
 
@@ -11,13 +11,25 @@
 ```bash
 ├── README.md
 └── src
-    ├── components 
-    │   ├── DropdownComponent.ts
-    │   └── DropdownFooterComponent.ts
+    ├── components
+    │   ├── ArrowBtnComponent.tsx
+    │   ├── ButtonComponent.tsx
+    │   ├── DialogComponent.tsx
+    │   ├── DialogWrapperComponent.tsx
+    │   ├── DropdownCompoent.tsx
+    │   ├── DropdownFooterCompoent.tsx
+    │   ├── PortalComponent.tsx
+    │   ├── StatusBarComponent.tsx
+    │   ├── ToggleButtonComponent.tsx
+    │   └── ZoomSliderComponent.tsx
     ├── node
     │   ├── TreeNode.ts
     │   └── TreeNodeWalker.ts
     └── util
         ├── ColorConvUtil.ts
-        └── unitConvUtil.ts
+        ├── Identifiable.ts
+        ├── UnitConvUtil.ts
+        ├── isMac.ts
+        ├── uuid.ts
+        └── wait.ts
 ```

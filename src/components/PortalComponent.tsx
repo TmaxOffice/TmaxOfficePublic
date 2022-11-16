@@ -1,7 +1,12 @@
 import { ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 
-const PortalComponent: React.FC = () => {
+interface PortalProps {
+  children?: ReactNode;
+  parentElement?: HTMLElement;
+}
+
+const PortalComponent: React.FC<PortalProps> = ({ children, parentElement }: PortalProps) => {
 
   return ;
 };

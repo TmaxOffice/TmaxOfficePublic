@@ -11,7 +11,10 @@ function ArrowBtnComponent({
   eventhandler,
 }: ICustomWidgetProps<ArrowBtnCustomAttType, WidgetEvents>): JSX.Element {
   return (
-    <button></button>
+    <button>
+      <ImgResComponent id="SPLIT_ARROW_DOWN_NORMAL" w={`${attr?.size}px`} h={`${attr?.size}px`} />
+    </button>
+
   );
 }
 

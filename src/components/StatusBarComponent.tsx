@@ -8,6 +8,7 @@ import StatusBarToggleBtnComponent from 'components/widgets/button/StatusBarTogg
 import 'style/StatusBar.scss';
 import useZoomSlider from 'hooks/control/useZoomSlider';
 import ZoomSliderComponent from 'components/statusbar/ZoomSliderComponent';
+import IconComponent from 'components/widgets/IconComponent';
 import useResizeStatusBar from 'hooks/statusbar/useResizeStatusBar';
 import LabelComponent from 'components/widgets/LabelComponent';
 
@@ -78,6 +79,14 @@ const StatusBarComponent: React.FC<StatusBarProps> = ({
       </div>
       <div className="pk-office-a-statusbar-statusarea" ref={statusAreaRef}>
         <div className="pk-office-a-statusbar-statusarea-status">
+          <IconComponent
+            attr={{
+              className: 'pk-office-a-statusbar-statusarea-icon',
+              img: statusImg,
+              width: '13px',
+              height: '13px',
+            }}
+          />
           <LabelComponent attr={{ label: statusStr }} />
         </div>
         <div className="pk-office-a-statusbar-statusarea-message">

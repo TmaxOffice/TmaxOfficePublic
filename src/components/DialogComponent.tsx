@@ -47,4 +47,9 @@ const DialogComponent = ({
 
 export default observer(DialogComponent);
 
-
+DialogComponent.defaultProps = {
+  isBackDrop: true,
+  isDraggable: true,
+  closeFocusTargetElement: undefined,
+  onCloseIconClick: undefined,
+};

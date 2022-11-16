@@ -37,10 +37,41 @@ const DialogComponent = ({
     closeFocusTargetElement,
   });
 
-  
+  const { documentStore } = useStore();
+  const shortcutContainer = documentStore.getShortcutContainer();
+  const dialogShortcutMap = shortcutContainer.getDialogShortcutMap();
+  const dialogShortcutHandlerMap = shortcutContainer.getDialogShortcutHandlerMap();
+  const { shortcutHandler } = useShortcut(dialogShortcutMap, dialogShortcutHandlerMap);
+
   return (
     <>
-    
+      {isBackDrop && (
+        <div className="pk-office-a-dialog-backdrop" aria-hidden onClick={focusDialog} />
+      )}
+      <div
+        className={classNames({
+          'pk-office-w-dialog': true,
+          [`${className}`]: !!className,
+        })}
+        tabIndex={-1}
+        ref={dialogRef}
+        role="dialog"
+        aria-hidden
+        onKeyDown={e => {
+          e.stopPropagation();
+          shortcutHandler(e);
+        }}
+        onKeyUp={() => shortcutContainer.clearKeyList()}
+      >
+        <DialogTitle
+          title={title}
+          innerRef={dragPointerRef}
+          onCloseIconClick={onCloseIconClick}
+          onDragStart={handleDragStart}
+        />
+        <DialogContents contents={contents} />
+        <DialogFooter footer={footer} />
+      </div>
     </>
   );
 };

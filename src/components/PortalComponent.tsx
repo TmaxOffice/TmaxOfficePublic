@@ -7,8 +7,9 @@ interface PortalProps {
 }
 
 const PortalComponent: React.FC<PortalProps> = ({ children, parentElement }: PortalProps) => {
+  const container = parentElement ?? document.querySelector('.pk-office-a-root') ?? document.body;
 
-  return ;
+  return ReactDOM.createPortal(children, container);
 };
 
 export default PortalComponent;

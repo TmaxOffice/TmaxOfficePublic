@@ -2,9 +2,9 @@
 티맥스 office의 오픈 소스 저장소 입니다
 
 # Features
-- <b>[src/components]</b> Ribbon, Dialog, Dropdown, StatusBar, ZoomSlider, Button
+- <b>[src/components]</b> Ribbon, Dialog, Dropdown, StatusBar, ZoomSlider, Button (Arrow, Toggle)
 - <b>[src/node]</b> 문서 컨텐츠 영역에 나타낼 개체들의 base class
-- <b>[src/util]</b> 값 변환을 위한 유틸 함수들 
+- <b>[src/util]</b> 값 변환, 클래스 id 추가, uuid 생성 등의 작업을 위한 유틸 함수
 
 ## SourceMap
 

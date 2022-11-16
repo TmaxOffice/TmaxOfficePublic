@@ -11,10 +11,20 @@ function ArrowBtnComponent({
   eventhandler,
 }: ICustomWidgetProps<ArrowBtnCustomAttType, WidgetEvents>): JSX.Element {
   return (
-    <button>
+            <button
+      className={classNames({
+        'pk-office-w-arrow': true,
+        [`pk-office-w-arrow--${attr?.type}`]: attr?.type,
+        [`pk-office-w-arrow--disabled`]: attr?.disabled,
+        [`${attr?.className}`]: attr?.className,
+      })}
+      type="button"
+      onClick={eventhandler?.onClick}
+      onMouseEnter={eventhandler?.onMouseEnter}
+      onMouseLeave={eventhandler?.onMouseLeave}
+    >
       <ImgResComponent id="SPLIT_ARROW_DOWN_NORMAL" w={`${attr?.size}px`} h={`${attr?.size}px`} />
     </button>
-
   );
 }
 

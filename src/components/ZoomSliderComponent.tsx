@@ -1,3 +1,4 @@
+import SliderComponent from 'components/widgets/SliderComponent';
 import WidgetEvents from 'model/ribbon/widget/common/WidgetEvents';
 import { ICustomWidgetProps } from 'model/ribbon/widget/common/WidgetInfos';
 import SliderCustomAttType from 'model/ribbon/widget/widgetAtt/SliderCustomAttType';
@@ -29,6 +30,13 @@ const ZoomSliderComponent = ({
       >
         -
       </span>
+      <SliderComponent
+        attr={{ percentage: attr?.percentage }}
+        eventhandler={{
+          onMouseDown: eventhandler?.onMouseDown,
+        }}
+        ref={attr?.sliderRef}
+      />
       <span
         style={{
           cursor: 'default',

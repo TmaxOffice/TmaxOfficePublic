@@ -14,8 +14,28 @@ const ToggleButtonComponent = ({
   attr,
   eventhandler,
 }: ICustomWidgetProps<ToggleCustomAttType, WidgetEvents>): JSX.Element => {
+  const iconSize: string = attr?.size !== 'large' ? '16px' : '30px';
   return (
-    <div>
+    <div
+      className={classNames({
+        'pk-office-w-toggle': true,
+        [`pk-office-w-toggle--${attr?.size}`]: attr?.size,
+        'pk-office-w-toggle--selected': attr?.isSelected,
+        'pk-office-w-toggle--disabled': attr?.disabled,
+        [`${attr?.className}`]: attr?.className,
+      })}
+      onClick={eventhandler?.onClick}
+      onMouseEnter={eventhandler?.onMouseEnter}
+      onMouseLeave={eventhandler?.onMouseLeave}
+      aria-hidden="true"
+    >
+      <div
+        className={classNames({
+          'pk-office-w-toggle-icon': true,
+          [`pk-office-w-toggle-icon--${attr?.size}`]: attr?.size,
+        })}
+      >
+      </div>
     </div>
   );
 };
